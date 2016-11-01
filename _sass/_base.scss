@@ -8,7 +8,12 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
+.background-image {
+        border: 2px solid blue;
+        border-radius: 5px;
+        position: top right;
+        margin-top: -40px;
+}
 
 /**
  * Basic styling
