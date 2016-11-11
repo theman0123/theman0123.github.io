@@ -3,5 +3,6 @@ layout: page
 title: Projects
 permalink: /projects/
 ---
-
-<a href="(blackandbluewater.com/deb)">{{ DEB }}</a>
+<ul>
+  <li><a href="blackandbluewater.com/deb">{{ DEB }}</a></li>
+</ul>
