@@ -1,0 +1,85 @@
+/*main.css*/
+
+#header {
+    background-image: url("http://desertedgebrewery.com/wp-content/uploads/2014/07/DesertEdgeSm.png");
+    height: 70px;
+    background-repeat: no-repeat;
+    margin-bottom: 2%;
+    z-index: 5;
+    font-size: 30px;
+}
+
+.head {
+    margin-left: 55%;
+    display: inline-block;
+    margin-top: 15%;
+    border-left: 5px solid #A70017;
+    font-size: 50px;
+    align-content: center;
+}
+
+body {
+    background: linear-gradient(to right, rgba(204, 102, 0, 0), rgba(204, 102, 0, 1));
+    background: linear-gradient(to left, rgba(190, 132, 49, 0), rgba(190, 132, 49, 1));
+    background-repeat: no-repeat;
+    background-size: 3100px 900px;
+}
+
+h1 {
+    text-align: center;
+    font-family: helvetica, arial, sans-serif;
+    font-weight: 100;
+    text-shadow: 1px 1px 2px black;
+}
+
+.wrapper {
+    overflow: hidden;
+    width: 35%;
+    float: left;
+    display: inline;
+    position: fixed;
+    left: 15px;
+}
+
+.fcolumn, .last {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+    margin-top: 1%;
+    height: 30%;
+    border: 5px outset rgb(204, 102, 0);
+    border-left: 4px solid #A70017;
+    
+}
+
+.last {
+
+}
+
+.fcolumn:hover, .last:hover {
+    text-shadow: 3px 3px 5px black;
+}
+
+#footer {
+    
+}
+
+#totop {
+    width: 75px;
+    height: 75px;
+    font-size: 120%;
+    text-align: center;
+    text-shadow: 5px 5px 8px black;
+    border: 3px solid black;
+    box-shadow: 5px 5px black;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+}
+
+#totop:hover {
+    font-size: 125%;
+    text-shadow: 5px 5px 20px black;
+    box-shadow: 5px 5px 20px black;
+}
+
