@@ -4,5 +4,5 @@ title: Projects
 permalink: /projects/
 ---
 <ul>
-  <li><a href="blackandbluewater.com/deb">DEB</a></li>
+  <li><a href="/deb">DEB</a></li>
 </ul>
