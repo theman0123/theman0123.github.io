@@ -4,4 +4,4 @@ title: Projects
 permalink: /projects/
 ---
 
-DEB (blackandbluewater.com/deb)
+<a href="(blackandbluewater.com/deb)">{{ DEB }}</a>
