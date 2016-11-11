@@ -4,4 +4,4 @@ title: Projects
 permalink: /projects/
 ---
 
-Desert Edge Brewery ({{ blackandbluewater.com/deb }})
+DEB ({{ blackandbluewater.com/deb }})
