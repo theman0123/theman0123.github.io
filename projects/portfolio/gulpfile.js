@@ -19,7 +19,7 @@ var banner = ['/*!\n',
 // Compiles SCSS files from /scss into /css
 gulp.task('sass', function() {
     return gulp.src('scss/freelancer.scss')
-        .pipe(sass())
+        .pipe(sass().on('error', sass.logError))
         .pipe(header(banner, { pkg: pkg }))
         .pipe(gulp.dest('css'))
         .pipe(browserSync.reload({
@@ -30,7 +30,8 @@ gulp.task('sass', function() {
 // Minify compiled CSS
 gulp.task('minify-css', ['sass'], function() {
     return gulp.src('css/freelancer.css')
-        .pipe(cleanCSS({ compatibility: 'ie8' }))
+        .pipe(cleanCSS({ compatibility: 'ie8',
+                       noAdvanced: true}))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('css'))
         .pipe(browserSync.reload({
