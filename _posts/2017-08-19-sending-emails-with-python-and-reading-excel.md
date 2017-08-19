@@ -9,7 +9,7 @@ This article assumes you know some programming. Python is an easy language to pi
 
 Download python [here](https://www.python.org/downloads/)
 
-check out this virtual environment article [here]: (http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+check out this virtual environment article [here](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
 <h1>Goal #1</h1>: Send an html email using a built in library from python (I’ll be writing it in python3). 
 
