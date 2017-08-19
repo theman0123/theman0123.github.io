@@ -44,4 +44,4 @@ data = list_invoices()
 screenshot here: 
 [My helpful screenshot]({{ blackandbluewater.com }}/assets/testing-screen-shot.png)
 
-hyperlink: [jekyll how to]({{https://jekyllrb.com/docs/posts/}})
+hyperlink: [jekyll how to](https://jekyllrb.com/docs/posts/)
