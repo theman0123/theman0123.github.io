@@ -7,7 +7,7 @@ categories: python
 
 This article assumes you know some programming. Python is an easy language to pick up, but if you’ve never written in python, I suggest you get it installed and learn how to set up a virtual environment prior to reading this. 
 
-Download python [here]: (https://www.python.org/downloads/)
+Download python [here](https://www.python.org/downloads/)
 
 check out this virtual environment article [here]: (http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
@@ -307,7 +307,9 @@ class Invoice:
 Now what? Well, we have a constructor function which we are calling in our build_email() function, giving us a list of templated html rows. All we really have to do is insert these templates into our larger html code.
 
 Your “html” variable should now look something like this:
+
 {% highlight ruby %}
+
 html = """\
     <!DOCTYPE html>
     <html>
@@ -380,7 +382,7 @@ And let's take a look at the send_email() code:
 
 def send_email(to, msg, new_template):
         
-    data.reverse()    
+    data.reverse()
     
     for i in range(0, 6):
         data.pop()
@@ -416,7 +418,7 @@ You can see that I’ve added in print statements as a way of monitoring sent em
 
 And that is it. You’ve done it. You now have a really nice, professional-looking html email that you are sending based off a simple excel spreadsheet. The ability to read excel spreadsheets means we can number crunch like a true python fan loves to do. We can use this skill in finance, science, stats and more.
 
-[Click here to see the full code on Github]()
+[Click here to see the full code on Github](blackandbluewater.com)
 
-If you’re looking for a similar article that introduces you to the concept of dictionaries in python, check out this [twilio article] (https://www.twilio.com/blog/2017/06/reading-excel-with-python-flask-and-openpyxl.html) fair warning: there are some errors in the twilio article's code, but the github code works and can be referenced.
+If you’re looking for a similar article that introduces you to the concept of dictionaries in python, check out this [twilio article](https://www.twilio.com/blog/2017/06/reading-excel-with-python-flask-and-openpyxl.html) fair warning: there are some errors in the twilio article's code, but the github code works and can be referenced.
 
