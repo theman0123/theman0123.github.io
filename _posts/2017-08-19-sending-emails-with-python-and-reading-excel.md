@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Read a spreadsheet and send html emails with python"
+date:   2017-08-19 12:12:01 -0600
+categories: python
+---
+
 This article assumes you know some programming. Python is an easy language to pick up, but if you’ve never written in python, I suggest you get it installed and learn how to set up a virtual environment prior to reading this. 
 
 Download python [here]: (https://www.python.org/downloads/)
