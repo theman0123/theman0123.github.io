@@ -73,7 +73,7 @@ we’re going to be grabbing our data by row. For now, we’ll keep our data sim
 Take a look at this code. I’ve commented extensively to allow the code and library to explain itself:
 
 {% highlight ruby %}
-def get_invoice():    
+def get_invoice():
     
 #set a variable to the file path of our spreadsheet#
     excelfile = 'simple_excelmail.xlsx'
@@ -92,7 +92,7 @@ def get_invoice():
     return invoice
 
 print(get_invoice())
-{% end highlight %}
+{% endhighlight %}
 
 It’s always a good idea to look at the docs. I spent some time in them in order to learn how to iterate over the data. Conveniently enough they have a function for us called ‘iter_rows()’ which allows us to extract data per row—so convenient! Additionally, I’ve added an offset variable to our iteration of rows, allowing us to skip the header of all the rows. Again, how convenient is that?!
 
@@ -107,7 +107,7 @@ data = get_invoice()
 text = "{0} owe me {1} dollars, bro".format(data[0], data[3]) 
 
 print(text)
-{% end highlight %}
+{% endhighlight %}
 
 Let’s run our script to make sure that we are 1) pulling our data from excel, 2) able to store it in a list that we can access, 3) and we’re populating a string with dynamic information. You should see the script print a string with our information from excel.
 
@@ -164,22 +164,22 @@ def build_email():
         </body>
     </html>
     """
-{% end highlight %}
+{% endhighlight %}
 
 We’re also going to need to change the type of message we’re sending. Instead of 
 
 {% ruby highlight %}
 msg = MIMEText(text)
-{% end highlight %}
+{% endhighlight %}
 change our msg to 
 {% ruby highlight %}
 msg = MIMEMultipart('alternative')
-{% end highlight %}
+{% endhighlight %}
 
 Add it to the top our document as well like so: 
 {% ruby highlight %}
 from email.mime.multipart import MIMEMultipart
-{% end highlight %}
+{% endhighlight %}
 And let’s keep our variable “text” as something to fall back on in case our html can’t be displayed. 
 
 We have two content portions to our email. One with html, another with plain text. let’s have our code reflect that and attach those 2 different portions to our “msg”.
@@ -191,7 +191,7 @@ part2 = MIMEText(html, 'html')
     
 msg.attach(part1)
 msg.attach(part2)
-{% end highlight %}
+{% endhighlight %}
 
 Great!
 
@@ -201,7 +201,7 @@ We need to be able to dynamically add table rows to this html, in case someone h
 def build_email(data):
     new_template = Invoice(data[0], data[1], data[2], data[3], data[4])
     to = data[5].split(",")
-{% end highlight %}
+{% endhighlight %}
 
 Above the "build_email(data)" let’s put our Invoice function with an __init__ portion inside, like so:
 
@@ -216,7 +216,7 @@ class Invoice:
         self.amount = amount.split(",")
         self.notes = notes.split(",")
         self.total = 0
-{% end highlight %}
+{% endhighlight %}
         
 Before we move on, let’s make sure we’re on the same page. We’re building a function so that we can send an html email with multiple rows, where each row contains an invoice number, an amount, a date, and any notes. This will be reflected in our spreadsheet by separating each invoice number with a comma. The invoice numbers should correlate to the amount, also separated with commas, etc. Check out how my spreadsheet looks above for clarification. 
 
@@ -240,7 +240,7 @@ self.template_array = []
                 """        
             self.template_array.append(template)
         self.total = str(self.total)
-{% end highlight %}
+{% endhighlight %}
 
 Pretty easy, right?
 Your whole Invoice function should look like this:
@@ -272,7 +272,7 @@ class Invoice:
                 """        
             self.template_array.append(template)
         self.total = str(self.total)
-{% end highlight %}
+{% endhighlight %}
 
 Now what? Well, we have a constructor function which we are calling in our build_email() function, giving us a list of templated html rows. All we really have to do is insert these templates into our larger html code.
 
@@ -318,12 +318,12 @@ html = """\
         </body>
     </html>
     """
-{% end highlight %}
+{% endhighlight %}
 
 you can see that we dismantled our list of templates with this line of code:
 {% ruby highlight %}
 ''.join(new_template.template_array)
-{% end highlight %}
+{% endhighlight %}
 If we were to look at our code for our templates it would appear as a big string. That’s exactly what we wanted. We are very close to sending a batch of html emails to different people, with different invoices.
 
 <h1>The Final Step</h1>
@@ -334,7 +334,7 @@ Let’s build one last function called send_email(). In it we’ll put a “try�
 Sooooo... at the end of our build_email() let's add:
 {% ruby highlight %}
 send_email(to, msg, new_template)
-{% end highlight %}
+{% endhighlight %}
 
 And let's take a look at the send_email() code:
 {% ruby highlight %}
@@ -369,7 +369,7 @@ def send_email(to, msg, new_template):
         print("Invoice Numbers: ", new_template.invoice_num)
 data = list_invoices()
 #print(data)
-{% end highlight %}
+{% endhighlight %}
 
 You can see that I’ve added in print statements as a way of monitoring sent emails. I find it reassuring/satisfying to see.
 
