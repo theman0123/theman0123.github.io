@@ -50,6 +50,7 @@ server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.login(gmail_user, gmail_appPassword)
 server.sendmail(sent_from, to, msg.as_string())
 server.quit()
+
 {% endhighlight %}
 
 Great Job! 
@@ -74,6 +75,7 @@ we’re going to be grabbing our data by row. For now, we’ll keep our data sim
 Take a look at this code. I’ve commented extensively to allow the code and library to explain itself:
 
 {% highlight ruby %}
+
 def get_invoice():
     
 #set a variable to the file path of our spreadsheet#
