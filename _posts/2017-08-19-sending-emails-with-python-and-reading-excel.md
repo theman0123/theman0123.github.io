@@ -11,10 +11,11 @@ Download python [here](https://www.python.org/downloads/)
 
 check out this virtual environment article [here](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
-<h1>Goal #1</h1>: Send an html email using a built in library from python (I’ll be writing it in python3). 
+<h1>Goal #1</h1>: Send an html email using a built in library from python called "smtplib" (simple-mail-transfer-protocol--SMTP). 
 
 <h1>Goal #2</h1>: We’ll send multiple emails with dynamically filled data by importing information from an excel file. (cool, dude)
 
+<h3>Estimated time</h3>: 30 minutes to 1 hour, depending on experience.
 
  We’ll build a simple but professional looking invoice that will look like this:
 
@@ -26,9 +27,12 @@ prior to sending our first email, we’ll need to go into gmail account settings
 
 Want more detailed instructions? 
 [How to allow your apps to access gmail](https://support.google.com/accounts/answer/6010255?hl=en)
+<br>
 [Setup an app password](https://support.google.com/mail/answer/185833?hl=en)
 
-Step one: import smtplib and send a simple email
+Python files are save with the .py extension and must be valid (--no dashes--)... I'd call mine something like send_email.py
+
+<h4>Step one</h4>: import smtplib and send a simple email 
 
 {% highlight ruby %}
 
@@ -61,16 +65,30 @@ Now let’s continue…
 
 Since we’re already sending emails, let’s shift our focus to reading an excel spreadsheet and populate a plain text email with the data from the spreadsheet.
 
-First let’s get the library openpxyl: pip install openpyxl
+First let’s get the library openpxyl.
 
-Now let’s add this library to our script: from openpyxl import load_workbook
+inside your virtual environment, enter this code: 
+
+{% highlight ruby %}
+
+pip install openpyxl
+
+{% endhighlight %}
+
+Now let’s add this library to our script.py: 
+
+{% highlight ruby %}
+
+from openpyxl import load_workbook
+
+{% endhighlight %}
 
 <h1>Thinking Like A Programmer</h1> 
 There are many ways to accomplish a task when programming. It helps to have an idea of the kind of the data we are getting, and how it’s being stored. Since our data is coming from a spreadsheet, it makes a lot of sense to store our data either by rows or columns. Take a look at how I designed my spreadsheet:
 
 ![screenshot of spreadsheet]({{blackandbluewater.com}}/assets/example-excel.png)
 
-we’re going to be grabbing our data by row. For now, we’ll keep our data simple. Later, we’ll want the ability to send more complex invoices. Let’s keep that in mind moving forward.
+we’re going to be grabbing our data by row. The first row is an example of a simple email with one invoice, while the second row shows how you might do a more complex invoice.
 
 Take a look at this code. I’ve commented extensively to allow the code and library to explain itself:
 
@@ -80,7 +98,7 @@ def get_invoice():
     
 #set a variable to the file path of our spreadsheet#
     excelfile = 'simple_excelmail.xlsx'
-#use the imported load_workbook() function to retrieve data#
+#use the imported load_workbook() function to retrieve the spreadsheet#
     wb = load_workbook(excelfile)
 #since we have the ability to store multiple spreadsheets in a single workbook, we’re setting up a #variable to access our first and only spreadsheet#
     ws = wb[wb.sheetnames[0]]
@@ -110,9 +128,9 @@ Now, all we need is to populate our plain text with some of that data…
 
 data = get_invoice()
 
-text = "{0} owe me {1} dollars, bro".format(data[0], data[3]) 
+text = "{0} owes me {1} dollars, bro".format(data[0], data[3]) 
 
-print(text)
+print(text)#output: "Dave owes me 500 dollars, bro"
 
 {% endhighlight %}
 
@@ -123,7 +141,7 @@ Well done. You might have noticed that if you have more than one row in your spr
 Interested in adding the html part? 
 
 <h1>Email Tips and Tricks</h1>
-Html emails are a bit tricky and I highly recommend you google some tips and tricks to writing html emails that are clean and consistent. I follow the advice of others when I use tables in my html layout. I suggest you do the same. The code isn’t pretty, it’s ugly and harder to read, but this will work across all the email clients I’ve tested (hotmail, gmail, yahoo, outlook). It’s also necessary to write css inline (curse you email world!!!). Another trick to use, set your max width to no larger than 600px.
+Html emails are a bit tricky and I highly recommend you google some tips and tricks to writing html emails that are clean and consistent. I follow the advice of others when I use tables in my html layout. I suggest you do the same. The code isn’t pretty, it’s ugly and harder to read, but this will work across all the email clients I’ve tested (hotmail, gmail, yahoo, outlook). It’s also necessary to write css inline (curse you email world!!!). Another trick to use--set your max width to no larger than 600px.
 
 I’m not concerned with teaching you html or css in this tutorial so I’m not going to explain much about what I’ve done. As a general hint to understanding the code, look for table rows (tr) and table headers (th), and those should give you an idea of how this html is laid out. 
 
@@ -231,7 +249,7 @@ Above the "build_email(data)" let’s put our Invoice function with an __init__ 
 
 {% highlight ruby %}
 
-# Invoice is Constructor for template to be emailed
+# Invoice is Constructor for template to be added to larger html later
 class Invoice:
     
     def __init__(self, name, invoice_num, date, amount, notes, email):
@@ -246,7 +264,7 @@ class Invoice:
         
 Before we move on, let’s make sure we’re on the same page. We’re building a function so that we can send an html email with multiple rows, where each row contains an invoice number, an amount, a date, and any notes. This will be reflected in our spreadsheet by separating each invoice number with a comma. The invoice numbers should correlate to the amount, also separated with commas, etc. Check out how my spreadsheet looks above for clarification. 
 
-Looking at the __init__ portion of the code we can see that we’re creating additional lists for our invoice numbers, date, amount, and notes.
+Looking at the __init__ portion of the code we can see that we’re creating additional lists for our invoice numbers, dates, amounts, and notes.
 
 Now, all we need is to setup a template and iterate over the values in our lists, inserting them into the template, which we will then insert into a list of templates… let me show you how I did this inside of the Invoice constructor function.
 
@@ -363,11 +381,11 @@ you can see that we dismantled our list of templates with this line of code:
 
 {% endhighlight %}
 
-If we were to look at our code for our templates it would appear as a big string. That’s exactly what we wanted. We are very close to sending a batch of html emails to different people, with different invoices.
+If we were to look at our code for our templates it would appear as a big string. That’s exactly what we wanted. We are very close to sending a batch of html emails to different people, with multiple invoices.
 
 <h1>The Final Step</h1>
 
-Let’s build one last function called send_email(). In it we’ll put a “try” where we can copy and paste our smtplib code we wrote at the beginning. We’ll add an except. And lastly, we need to take our data and remove the portions we’ve already used for our current email adresses, calling our build_email() once again to start the process for any additional data we’ve pulled from rows in our spreadsheet. We also need to call our send_email() with a few parameters from our build_email() function. 
+Let’s build one last function called send_email(). In it we’ll put a “try” where we can copy and paste our smtplib code we wrote at the beginning. We’ll add an except... And lastly, we'll take our data and remove the portions we’ve already used for our current email, calling our build_email() once again to start the process for any additional data we’ve pulled from rows in our spreadsheet. We also need to call our send_email() with a few parameters from our build_email() function. 
 
 
 Sooooo... at the end of our build_email() let's add:
