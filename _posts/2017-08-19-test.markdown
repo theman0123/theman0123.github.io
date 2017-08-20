@@ -1,9 +1,0 @@
----
-layout: post
-title:  "test post"
-date:   2017-08-19 12:12:01 -0600
-categories: jekyll testing
----
-
-This article assumes you know some programming. Python is an easy language to pick up, but if you’ve never written in python, I suggest you get it installed and learn how to set up a virtual environment prior to reading this. 
-
