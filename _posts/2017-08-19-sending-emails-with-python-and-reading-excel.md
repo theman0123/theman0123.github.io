@@ -438,7 +438,7 @@ You can see that I’ve added in print statements as a way of monitoring sent em
 
 And that is it. You’ve done it. You now have a really nice, professional-looking html email that you are sending based off a simple excel spreadsheet. The ability to read excel spreadsheets means we can number crunch like a true python fan loves to do. We can use this skill in finance, science, stats and more.
 
-[Click here to see the full code on Github](blackandbluewater.com)
+[Click here to see the full code on Github](https://github.com/theman0123/python_excelmail_tut)
 
 If you’re looking for a similar article that introduces you to the concept of dictionaries in python, check out this [twilio article](https://www.twilio.com/blog/2017/06/reading-excel-with-python-flask-and-openpyxl.html) fair warning: there are some errors in the twilio article's code, but the github code works and can be referenced.
 
