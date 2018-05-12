@@ -5,11 +5,9 @@ date:   2018-05-12
 categories: Magic
 ---
 
-Laying a groundwork for God: Sincere inquires only
-
 It's hard to write a concise piece that addresses such a big topic. It's arguably true that every individual who has ever lived has generated or believed in some supernatural being beyond the convention of ordinary reality.
 
-    An Experiment
+ ## An Experiment
 
 To begin with, we should first tackle another broad and difficult topic of "Reality". I need you first to close your eyes (after you read the question that is). I want you to answer the following question: 
 
@@ -23,7 +21,7 @@ Now I want you to answer one more question: "How does your God(s) help you?"
 
 This is a tricky question. If you believe a certain way about your God, you will claim that God helps you in many ways both inside your brain and in the physical world. I'm used to specific terms, and I will now refer to the imagined reality of yourself, as the mythical/mystical reality (MR) and as the physical reality as "shared historical reality" (SHR).
 
-    Realities And Their Limitations
+  ## Realities And Their Limitations
 
 It seems to be that even in the cases in which you claim divine aid in the SHR, you are really claiming an influence in MR leading to aid in the SHR. Ultimately, unless you've seen God and he literally handed you aid of some kind, you must acknowledge that a God's direct influence is in the MR and not the SHR; at least that you have ever personally experienced.
 
@@ -35,7 +33,7 @@ When we obsorb SHR it must always pass through our own individual brains which m
 
 In other words, the SHR passes through the MR precisely because we all have brains that process all information.
 
-    Location of Gods: The Cardinal Rule
+  ## Location of Gods: The Cardinal Rule
 
 But if you think that I've led you here to this point to tell you that there is no God, you are mistaken. You have many God(s), regardless of your religious classification or attachment. We are mystical beings. The error, I seek to rectify in this short word-filled essay, is the placement of the God(s), not their existence.
 
