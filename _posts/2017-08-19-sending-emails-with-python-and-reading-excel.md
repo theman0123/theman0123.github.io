@@ -442,3 +442,5 @@ And that is it. You’ve done it. You now have a really nice, professional-looki
 
 If you’re looking for a similar article that introduces you to the concept of dictionaries in python, check out this [twilio article](https://www.twilio.com/blog/2017/06/reading-excel-with-python-flask-and-openpyxl.html) fair warning: there are some errors in the twilio article's code, but the github code works and can be referenced.
 
+Additionally, [here is a link](https://www.pyxll.com/blog/tools-for-working-with-excel-and-python/) to more tutorials using spreadsheets combined with various python libraries (we used openpyxl above). Explore, code, create. And good luck!
+
